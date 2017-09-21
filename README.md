@@ -56,6 +56,19 @@ fa = face_alignment.FaceAlignment(face_alignment.LandmarksType._2D, enable_cuda=
 
 input = io.imread('../test/assets/aflw-test.jpg')
 preds = fa.detect_faces(input)
+
+
+
+import matplotlib.pyplot as plt
+im=plt.imread('/home/steven/face01.jpg')
+plt.imshow(im)
+
+x1s=[s[0] for s in preds[0]]
+y1s=[s[1] for s in preds[0]]
+plt.scatter(x1s,y1s)
+plt.show()
+
+
 ```
 
 #### Process an entire directory in one go
